@@ -6,7 +6,9 @@
 
 ## 🎮 게임 소개
 
-
+<p align="center">
+  <img src="ChickenEscpaegif2.gif" width="700">
+</p>
 플레이어가 **알 → 병아리 → 닭**으로 성장하며
 점점 더 어려운 장애물을 극복하는 무한 러닝 게임.
 
@@ -52,6 +54,11 @@
 - Engine : Unity 6
 - Language : C#
 - IDE : Visual Studio
+
+---
+## 📹 게임 플레이 영상
+
+https://youtu.be/영상주소
 
 ---
 
