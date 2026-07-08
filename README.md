@@ -85,3 +85,78 @@ https://github.com/surprisedcar/ChickEscape/releases/download/v1.0/chickenEscape
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f1c9a48-0f92-439b-8b9b-4df122bc2cb0" />
 최종 화면. 최고 점수, 현재 점수, 모은 모이 출력.
+
+---
+## 📂 프로젝트 구조
+```
+Assets/
+├── Home/              # 시작 화면
+│   └── GameStart.cs
+├── ChickenStation/     # 3번째 스테이지 (닭 구간)
+│   ├── ChickenWalkController.cs   # 캐릭터 이동/조작
+│   ├── ChickenBackScroll.cs       # 배경 스크롤
+│   ├── ChickenGroundScroll.cs     # 바닥 스크롤
+│   ├── TreeMover.cs / TreeHit.cs  # 나무 장애물 이동 및 충돌 처리
+│   └── ChickenImage/              # 캐릭터 스프라이트
+├── ChickStation/       # 2번째 스테이지 (병아리 구간)
+│   ├── ChickWalkControl.cs
+│   ├── ChickBackScroll.cs / ChickGroundScroll.cs
+│   ├── RockSpawner.cs / RockMover.cs / RockHit.cs  # 돌 장애물 스폰 및 충돌
+│   └── ChickImage/
+├── EggStation/         # 1번째 스테이지 (알 구간)
+│   ├── GameManager.cs
+│   ├── Egg/
+│   │   ├── EggController.cs
+│   │   └── EggInputController.cs
+│   ├── Snake/
+│   │   ├── SnakeSpawner.cs / SnakeMover.cs / SnakeHit.cs #뱀 장애물 스폰 및 충돌
+│   └── background/
+│       ├── BackgroundScroll1.cs
+│       └── GroundScroll.cs
+├── Score/              # 점수/아이템 시스템
+│   ├── ScoreManager.cs
+│   ├── ItemSpawner.cs / ItemMove.cs / Item.cs
+│   └── SceveUIUtilizer.cs
+├── Status/             # 체력 UI
+│   └── Status.cs
+├── Sound/              # 사운드 관리
+│   ├── BackgroundMusic.cs
+│   └── SceneBGMSetter.cs
+├── GameOver/           # 게임 오버 화면
+│   ├── GameOverManager.cs
+│   └── GameOverDisplay.cs
+├── Scenes/             # 씬 파일
+│   ├── HomeScene.unity
+│   ├── ChickenStationScene.unity
+│   ├── ChickStation.unity
+│   ├── EggStationScene.unity
+│   ├── ManualScene.unity
+│   └── GameOverScene.unity
+└── Font/               # 커스텀 폰트 (BMJUA, 나눔손글씨)
+```
+
+---
+## 🧩 핵심 시스템 설명
+
+### 스테이지 진행 구조
+게임은 다음 3단계 스테이지로 구성.
+1.**EggStation** — 알 캐릭터로 뱀 장애물을 피하는 구간
+2.**ChickStation** — 병아리 캐릭터로 뱀 장애물과 돌 장애물을 피하는 구간
+3.**ChickenStation** — 닭 캐릭터로 뱀, 돌, 나무 장애물을 피하는 구간
+
+각 스테이지는 `~BackScroll.cs` / `~GroundScroll.cs` 스크립트로 배경과 바닥을 무한 스크롤시키고, `~WalkController.cs`(또는 `WalkControl.cs`)로 캐릭터 조작을 처리.
+
+### 장애물 시스템
+- 스테이지별로 `Spawner` → `Mover` → `Hit` 3개 스크립트가 한 세트로 동작.
+- 예: `RockSpawner.cs`(생성) → `RockMover.cs`(이동) → `RockHit.cs`(충돌 판정)
+
+### 점수 및 아이템 (`Score/`)
+- `ItemSpawner.cs`로 아이템(씨앗 등) 생성
+- `ScoreManager.cs`에서 점수 누적 관리
+
+### 체력 시스템 (`Status/Status.cs`)
+- 하트 이미지 기반 체력바 UI 관리
+
+### 사운드 (`Sound/`)
+- `BackgroundMusic.cs`: 배경음악 재생
+- `SceneBGMSetter.cs`: 씬 전환 시 BGM 자동 전환
