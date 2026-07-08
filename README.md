@@ -62,7 +62,7 @@ https://youtu.be/영상주소
 
 ---
 ## 💛 게임 다운로드
-sha256:b76e07b0d3dc5575d33a942e337437621c38f17320c759082b0b9fc527017abb
+https://github.com/surprisedcar/ChickEscape/releases/download/v1.0/chickenEscapePlay.zip
 
 
 ---
