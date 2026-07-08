@@ -37,7 +37,7 @@
 ## ❤️ 게임 오버
 
 체력이 모두 소진되면 게임이 종료.
-특히 알 단계에서는 모이를 다 먹기 전에 알이 꺠지면 빠르게 게임 오버.
+특히 알 단계에서는 모이를 다 먹기 전에 알이 깨지면 빠르게 게임 오버.
 
 최종 화면에는
 
@@ -58,10 +58,11 @@
 ---
 ## 📹 게임 플레이 영상
 
-https://youtu.be/영상주소
+[https://youtu.be/영상주소](https://youtu.be/_Uo5sSwRlRc)
 
 ---
 ## 💛 게임 다운로드
+조작법 : 슬라이딩->아래 화살표 / 점프->스페이스 바  
 https://github.com/surprisedcar/ChickEscape/releases/download/v1.0/chickenEscapePlay.zip
 
 
