@@ -61,7 +61,11 @@
 https://youtu.be/영상주소
 
 ---
+## 📹 게임 다운로드
 
+
+
+---
 ## 📷 게임 화면
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a585306a-af15-4fb5-8b86-baecf41d5a8b" />
